@@ -1,0 +1,776 @@
+Table of Contents
+What is Machine Learning?
+Scope of Machine Learning
+Types of Machine Learning
+Applications of Machine Learning
+Machine Learning Workflow
+Data Types
+Data Preprocessing
+Handling Missing Values
+Feature Selection
+Training Data
+Testing Data
+Training vs Testing Data
+Important Terms
+Complete ML Flow
+Quick Revision
+1. What is Machine Learning?
+Definition
+
+Machine Learning (ML) is a branch of Artificial Intelligence (AI) that enables computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every task.
+
+Simple Explanation
+
+In traditional programming:
+
+Rules + Data → Output
+
+In Machine Learning:
+
+Data + Output → Learning → Model
+
+The trained model can then use new data to make predictions.
+
+Example
+
+Suppose we want to identify spam emails.
+
+We give the ML model many examples:
+
+Email 1 → Spam
+Email 2 → Not Spam
+Email 3 → Spam
+Email 4 → Not Spam
+
+The model learns patterns from these examples and can later predict whether a new email is spam.
+
+2. Scope of Machine Learning
+Definition
+
+The scope of Machine Learning refers to the different areas where ML can be used to analyze data, identify patterns, automate tasks and make predictions.
+
+Major Areas
+1. Prediction
+
+ML can predict future values using historical data.
+
+Example:
+
+Previous House Data → ML → House Price Prediction
+2. Classification
+
+ML can classify data into different categories.
+
+Example:
+
+Email → Spam / Not Spam
+3. Recommendation
+
+ML can recommend products, movies, songs, etc. based on user behaviour.
+
+Example:
+
+User Activity → ML → Movie Recommendation
+4. Pattern Recognition
+
+ML can identify hidden patterns in data.
+
+5. Automation
+
+ML can automate tasks that normally require human decision-making.
+
+6. Image Recognition
+
+ML can identify objects, faces, patterns, etc. in images.
+
+7. Natural Language Processing
+
+ML can be used to process and understand human language.
+
+3. Types of Machine Learning
+
+Machine Learning is mainly divided into:
+
+                 Machine Learning
+                       |
+       --------------------------------
+       |              |               |
+ Supervised      Unsupervised    Reinforcement
+ Learning         Learning        Learning
+3.1 Supervised Learning
+Definition
+
+Supervised Learning is a type of Machine Learning in which the model learns from labelled data, where the correct output is already known.
+
+Example
+Input	Output
+Study 2 hours	Fail
+Study 5 hours	Pass
+Study 8 hours	Pass
+
+The model learns the relationship between input and output.
+
+Main Types
+Classification
+Regression
+Examples
+Spam detection
+Student result prediction
+House price prediction
+Key Point
+
+Supervised Learning = Labelled Data
+
+3.2 Unsupervised Learning
+Definition
+
+Unsupervised Learning is a type of Machine Learning in which the model learns from unlabelled data and discovers hidden patterns or groups by itself.
+
+There is no predefined correct output.
+
+Example
+
+A company has customer data:
+
+Customer 1
+Customer 2
+Customer 3
+Customer 4
+...
+
+The ML algorithm can automatically group similar customers.
+
+Main Task
+
+Clustering
+
+Example
+Customers
+    ↓
+ML Algorithm
+    ↓
+Group 1 | Group 2 | Group 3
+Key Point
+
+Unsupervised Learning = Unlabelled Data
+
+3.3 Reinforcement Learning
+Definition
+
+Reinforcement Learning is a type of Machine Learning in which an agent learns by interacting with an environment and receiving rewards or penalties for its actions.
+
+Basic Concept
+Agent
+  ↓
+Takes Action
+  ↓
+Environment
+  ↓
+Reward / Penalty
+  ↓
+Learns
+Example
+
+A computer learns to play a game.
+
+Good move → Reward
+Bad move → Penalty
+
+The system gradually learns which actions produce better results.
+
+Key Point
+
+Reinforcement Learning = Reward + Penalty
+
+4. Applications of Machine Learning
+Definition
+
+Applications of Machine Learning are real-world areas where ML techniques are used to solve problems, automate tasks or make predictions.
+
+1. Healthcare
+
+Used for:
+
+Disease prediction
+Medical image analysis
+Patient data analysis
+2. Banking
+
+Used for:
+
+Fraud detection
+Risk analysis
+Credit assessment
+3. E-Commerce
+
+Used for:
+
+Product recommendation
+Customer analysis
+Sales prediction
+4. Email
+
+Used for:
+
+Spam detection
+Email classification
+5. Social Media
+
+Used for:
+
+Content recommendation
+Friend suggestions
+Personalised feeds
+6. Transportation
+
+Used for:
+
+Traffic prediction
+Route optimisation
+Intelligent transportation systems
+7. Education
+
+Used for:
+
+Student performance prediction
+Personalised learning
+Result analysis
+8. Business
+
+Used for:
+
+Sales forecasting
+Customer analysis
+Demand prediction
+5. Machine Learning Workflow
+Definition
+
+Machine Learning Workflow is a sequence of steps followed to collect data, prepare it, train a model, test it and use it for prediction.
+
+Complete Workflow
+Problem Definition
+       ↓
+Data Collection
+       ↓
+Data Preprocessing
+       ↓
+Feature Selection
+       ↓
+Train-Test Split
+       ↓
+Model Selection
+       ↓
+Model Training
+       ↓
+Model Testing / Evaluation
+       ↓
+Prediction
+Step 1: Problem Definition
+Definition
+
+Problem Definition is the process of clearly identifying the problem that the ML model needs to solve.
+
+Example:
+
+Predict whether a student will pass or fail.
+
+Step 2: Data Collection
+Definition
+
+Data Collection is the process of gathering relevant data required to solve the ML problem.
+
+Data can come from:
+
+Databases
+CSV files
+Websites
+Surveys
+Sensors
+Applications
+Step 3: Data Preprocessing
+Definition
+
+Data Preprocessing is the process of cleaning and preparing raw data before giving it to a Machine Learning model.
+
+It may include:
+
+Handling missing values
+Removing duplicates
+Correcting errors
+Data transformation
+Feature selection
+Step 4: Feature Selection
+Definition
+
+Feature Selection is the process of selecting the most relevant features from a dataset for training the ML model.
+
+Example:
+
+For predicting student marks:
+
+Study Hours       → Useful
+Attendance        → Useful
+Previous Marks    → Useful
+Student ID        → Usually not useful
+Favourite Colour  → Usually not useful
+Step 5: Train-Test Split
+Definition
+
+Train-Test Split is the process of dividing the dataset into training data and testing data.
+
+Common split:
+
+80% → Training
+20% → Testing
+
+The exact ratio can vary depending on the problem and dataset.
+
+Step 6: Model Selection
+Definition
+
+Model Selection is the process of choosing a suitable Machine Learning algorithm for solving the given problem.
+
+Example:
+
+Classification → Classification Algorithm
+Regression     → Regression Algorithm
+Clustering     → Clustering Algorithm
+Step 7: Model Training
+Definition
+
+Model Training is the process of teaching an ML model using training data so that it can learn patterns and relationships.
+
+Training Data
+      ↓
+ML Algorithm
+      ↓
+Trained Model
+Step 8: Model Testing / Evaluation
+Definition
+
+Model Testing is the process of evaluating a trained model using unseen testing data to measure how well it performs.
+
+Step 9: Prediction
+Definition
+
+Prediction is the process of using a trained ML model to generate an output for new or unseen data.
+
+Example:
+
+New Student Data
+       ↓
+Trained Model
+       ↓
+Predicted Result
+6. Data Types
+Definition
+
+Data Types describe the different forms in which data can be represented and used in Machine Learning.
+
+The two major categories are:
+
+Data
+ |
+ |----------------------|
+ |                      |
+Numerical            Categorical
+6.1 Numerical Data
+Definition
+
+Numerical Data is data represented using numbers on which mathematical operations can be performed.
+
+Examples
+Age
+Height
+Weight
+Salary
+Marks
+Temperature
+
+Numerical data is mainly:
+
+Numerical Data
+      |
+ ----------------
+ |              |
+Discrete     Continuous
+6.1.1 Discrete Data
+Definition
+
+Discrete Data consists of countable values, usually whole numbers.
+
+Examples
+Number of students = 50
+Number of cars = 5
+Number of employees = 100
+
+You generally cannot have:
+
+5.7 students
+6.1.2 Continuous Data
+Definition
+
+Continuous Data can take any value within a given range and can contain decimal values.
+
+Examples
+Height = 175.5 cm
+Weight = 70.8 kg
+Temperature = 36.7°C
+6.2 Categorical Data
+Definition
+
+Categorical Data represents data using categories, names or labels rather than numerical measurements.
+
+Examples
+Gender
+Colour
+City
+Product Type
+Department
+
+Categorical data can be:
+
+Categorical Data
+      |
+ ----------------
+ |              |
+Nominal       Ordinal
+6.2.1 Nominal Data
+Definition
+
+Nominal Data consists of categories that have no natural order or ranking.
+
+Examples
+Colour → Red, Blue, Green
+
+City → Kolkata, Delhi, Mumbai
+
+There is no meaningful order such as:
+
+Red > Blue > Green
+6.2.2 Ordinal Data
+Definition
+
+Ordinal Data consists of categories that have a meaningful order or ranking.
+
+Examples
+Low → Medium → High
+
+or
+
+Poor → Average → Good → Excellent
+
+Here, the order has meaning.
+
+7. Data Preprocessing
+Definition
+
+Data Preprocessing is the process of cleaning, transforming and preparing raw data so that it can be effectively used by a Machine Learning model.
+
+Real-world data may contain:
+
+Missing values
+Duplicate records
+Incorrect values
+Different formats
+Unnecessary features
+Categorical values
+
+Therefore, preprocessing is an important step before model training.
+
+Common Data Preprocessing Steps
+Raw Data
+   ↓
+Data Cleaning
+   ↓
+Handle Missing Values
+   ↓
+Transform Data
+   ↓
+Feature Selection
+   ↓
+Prepared Data
+   ↓
+ML Model
+7.1 Importance of Data Preprocessing
+Definition
+
+Data preprocessing is important because ML models work better when the input data is clean, consistent and properly prepared.
+
+Important Points
+Improves data quality.
+Removes unnecessary data.
+Handles missing information.
+Makes data suitable for ML algorithms.
+Can improve model performance.
+Reduces problems caused by poor-quality data.
+8. Handling Missing Values
+Definition
+
+Missing Values are data values that are absent, unavailable or not recorded in a dataset.
+
+Example:
+
+Name	Age	Salary
+Ali	22	25000
+John	—	30000
+Sara	24	—
+
+Here, Age for John and Salary for Sara are missing.
+
+Methods to Handle Missing Values
+1. Remove Rows
+Definition
+
+Row removal is the process of deleting records that contain missing values.
+
+Useful when only a small number of records are affected.
+
+Disadvantage: Important information may be lost, and removing records can introduce bias.
+
+2. Remove Columns
+Definition
+
+Column removal is the process of deleting a feature that contains too many missing values or is not useful for the problem.
+
+Example:
+
+If Address is missing in most records and is not needed, it may be removed.
+
+3. Mean Imputation
+Definition
+
+Mean Imputation replaces missing numerical values with the mean (average) of the available values.
+
+Example:
+
+10, 20, Missing, 30
+
+Mean:
+
+(10 + 20 + 30) / 3 = 20
+
+After imputation:
+
+10, 20, 20, 30
+4. Median Imputation
+Definition
+
+Median Imputation replaces a missing numerical value with the median of the available values.
+
+Median is the middle value after arranging the data in order.
+
+It can be useful when data contains extreme values.
+
+5. Mode Imputation
+Definition
+
+Mode Imputation replaces a missing value with the most frequently occurring value.
+
+Example:
+
+Red, Blue, Red, Missing
+
+Mode = Red
+
+Therefore:
+
+Red, Blue, Red, Red
+
+This is commonly useful for categorical data.
+
+Scikit-learn's SimpleImputer supports strategies such as mean, median, most-frequent and constant values.
+
+9. Feature Selection
+Definition
+
+Feature Selection is the process of selecting the most relevant and useful features from a dataset while removing irrelevant or unnecessary features.
+
+Example
+
+Suppose we want to predict student performance.
+
+Study Hours        → Relevant
+Attendance         → Relevant
+Previous Marks     → Relevant
+Student ID         → Usually irrelevant
+Favourite Colour   → Usually irrelevant
+Importance
+Removes irrelevant features.
+Reduces data complexity.
+Can reduce training time.
+Can improve model performance.
+Makes the model easier to understand.
+Can reduce the risk of overfitting.
+
+Feature-selection methods can remove irrelevant or low-value features and may improve efficiency or model performance.
+
+10. Training Data
+Definition
+
+Training Data is the portion of a dataset used to train a Machine Learning model and allow it to learn patterns from the data.
+
+Example:
+
+Total Data = 1000 records
+
+Training Data = 800 records
+
+The model learns from these 800 records.
+
+Training Data
+      ↓
+ML Algorithm
+      ↓
+Learning
+      ↓
+Trained Model
+11. Testing Data
+Definition
+
+Testing Data is the portion of a dataset used to evaluate a trained Machine Learning model on data that was not used during training.
+
+Example:
+
+Total Data = 1000 records
+
+Testing Data = 200 records
+
+The model does not learn from these records during training.
+
+Instead, they are used to check performance.
+
+12. Training vs Testing Data
+Training Data	Testing Data
+Used to train the model	Used to test the model
+Model learns from it	Model should not learn from it
+Usually larger portion	Usually smaller portion
+Used during model fitting	Used during evaluation
+Contains examples for learning	Represents unseen data
+Example
+1000 Records
+     |
+     |-------------------|
+     |                   |
+  800 Records         200 Records
+     |                   |
+  Training              Testing
+     |                   |
+     ↓                   ↓
+  Learn             Evaluate
+
+train_test_split is commonly used to create random training and testing subsets; parameters such as test_size, train_size, random_state, and stratify control the split.
+
+13. Important Terms
+Feature
+Definition
+
+A feature is an individual input variable or measurable property used by an ML model to make predictions.
+
+Example:
+
+For house-price prediction:
+
+Area
+Number of Rooms
+Location
+Age
+
+These are features.
+
+Target
+Definition
+
+Target is the output variable that the Machine Learning model tries to predict.
+
+Example:
+
+Area
+Rooms
+Location
+   ↓
+ML Model
+   ↓
+House Price
+
+Here, House Price = Target
+
+Label
+Definition
+
+A label is the known correct output associated with an input in supervised learning.
+
+Example:
+
+Email → Spam
+
+Here:
+
+Spam = Label
+
+Model
+Definition
+
+A Machine Learning model is a trained mathematical representation that learns patterns from data and uses those patterns to make predictions or decisions.
+
+14. Complete ML Flow
+
+The complete basic Machine Learning process can be remembered as:
+
+             MACHINE LEARNING
+                    |
+                    ↓
+            Problem Definition
+                    |
+                    ↓
+             Data Collection
+                    |
+                    ↓
+           Data Preprocessing
+                    |
+          --------------------
+          |                  |
+   Missing Values       Data Cleaning
+          |                  |
+          --------↓----------
+                    |
+                    ↓
+            Feature Selection
+                    |
+                    ↓
+             Train-Test Split
+                /        \
+               /          \
+              ↓            ↓
+          Training       Testing
+              |
+              ↓
+        Model Training
+              |
+              ↓
+        Trained Model
+              |
+              ↓
+        Model Evaluation
+              |
+              ↓
+          Prediction
+15. Important Differences
+Supervised vs Unsupervised Learning
+Supervised	Unsupervised
+Uses labelled data	Uses unlabelled data
+Correct output is known	Correct output is not known
+Learns input-output relationship	Finds hidden patterns
+Classification and regression	Mainly clustering
+Example: Spam detection	Example: Customer grouping
+Discrete vs Continuous Data
+Discrete	Continuous
+Countable values	Values within a range
+Usually whole numbers	Can contain decimals
+Number of students	Height
+Number of cars	Weight
+Nominal vs Ordinal Data
+Nominal	Ordinal
+No order	Has meaningful order
+Red, Blue, Green	Low, Medium, High
+Kolkata, Delhi, Mumbai	Poor, Good, Excellent
