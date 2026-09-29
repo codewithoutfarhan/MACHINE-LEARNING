@@ -1,0 +1,307 @@
+Simple Linear Regression
+1. Definition
+
+Simple Linear Regression is a supervised machine learning technique used to predict a continuous numerical output using one independent variable.
+
+It finds the best-fitting straight line between an independent variable X and a dependent variable Y.
+
+Examples
+Study Hours → Marks
+Experience → Salary
+House Size → House Price
+Advertising Cost → Sales
+2. Independent Variable
+
+The independent variable is the input variable used to predict the output.
+
+It is represented by:
+
+X
+
+Example:
+
+Study Hours
+
+3. Dependent Variable
+
+The dependent variable is the output variable that we want to predict.
+
+It is represented by:
+
+Y
+
+Example:
+
+Marks
+
+4. Simple Linear Regression Equation
+
+The basic regression equation is:
+
+$$ \hat{Y} = b_0 + b_1X $$
+
+Where:
+
+Ŷ = predicted value of Y
+b₀ = intercept
+b₁ = slope/coefficient
+X = independent variable
+
+It can also be written as:
+
+$$ Y = mX + b $$
+
+Where:
+
+m = slope
+b = intercept
+5. Mean
+
+Mean of X:
+
+$$ \bar{X} = \frac{\sum X}{n} $$
+
+Mean of Y:
+
+$$ \bar{Y} = \frac{\sum Y}{n} $$
+
+Where:
+
+ΣX = sum of X values
+ΣY = sum of Y values
+n = number of observations
+6. Slope
+Definition
+
+Slope represents the change in the predicted value of Y for a one-unit increase in X.
+
+Formula
+$$ b_1 = \frac{\sum (X-\bar{X})(Y-\bar{Y})} {\sum (X-\bar{X})^2} $$
+
+Another formula:
+
+$$ b_1 = \frac{n\sum XY-(\sum X)(\sum Y)} {n\sum X^2-(\sum X)^2} $$
+Interpretation
+
+If:
+
+$$ b_1 = 5 $$
+
+then a one-unit increase in X is associated with a 5-unit increase in predicted Y.
+
+If:
+
+$$ b_1 = -5 $$
+
+then a one-unit increase in X is associated with a 5-unit decrease in predicted Y.
+
+7. Intercept
+Definition
+
+The intercept is the predicted value of Y when X is equal to zero.
+
+Formula
+$$ b_0 = \bar{Y} - b_1\bar{X} $$
+8. Complete Numerical Example
+
+Suppose we have:
+
+Study Hours (X)	Marks (Y)
+1	35
+2	40
+3	50
+4	55
+5	65
+
+We need to find the regression equation.
+
+Step 1: Create the Calculation Table
+X	Y	X²	XY
+1	35	1	35
+2	40	4	80
+3	50	9	150
+4	55	16	220
+5	65	25	325
+15	245	55	810
+
+Therefore:
+
+$$ n = 5 $$ $$ \sum X = 15 $$ $$ \sum Y = 245 $$ $$ \sum X^2 = 55 $$ $$ \sum XY = 810 $$
+Step 2: Calculate Slope
+
+Formula:
+
+$$ b_1 = \frac{n\sum XY-(\sum X)(\sum Y)} {n\sum X^2-(\sum X)^2} $$
+
+Substitute the values:
+
+$$ b_1 = \frac{5(810)-(15)(245)} {5(55)-(15)^2} $$ $$ b_1 = \frac{4050-3675}{275-225} $$ $$ b_1 = \frac{375}{50} $$
+
+Therefore:
+
+$$ \boxed{b_1 = 7.5} $$
+Step 3: Calculate Mean of X
+$$ \bar{X} = \frac{15}{5} $$ $$ \boxed{\bar{X} = 3} $$
+Step 4: Calculate Mean of Y
+$$ \bar{Y} = \frac{245}{5} $$ $$ \boxed{\bar{Y} = 49} $$
+Step 5: Calculate Intercept
+
+Formula:
+
+$$ b_0 = \bar{Y} - b_1\bar{X} $$
+
+Substitute:
+
+$$ b_0 = 49 - (7.5)(3) $$ $$ b_0 = 49 - 22.5 $$
+
+Therefore:
+
+$$ \boxed{b_0 = 26.5} $$
+Step 6: Final Regression Equation
+
+The general equation is:
+
+$$ \hat{Y} = b_0 + b_1X $$
+
+Therefore:
+
+$$ \boxed{\hat{Y} = 26.5 + 7.5X} $$
+9. Prediction
+
+Suppose a student studies for 6 hours.
+
+Therefore:
+
+$$ X = 6 $$
+
+Our regression equation is:
+
+$$ \hat{Y} = 26.5 + 7.5X $$
+
+Substitute:
+
+$$ \hat{Y} = 26.5 + 7.5(6) $$ $$ \hat{Y} = 26.5 + 45 $$
+
+Therefore:
+
+$$ \boxed{\hat{Y} = 71.5} $$
+
+Predicted marks = 71.5
+
+10. Residual / Prediction Error
+Definition
+
+A residual is the difference between the actual value and the predicted value.
+
+Formula:
+
+$$ e = Y-\hat{Y} $$
+
+Example:
+
+Actual value:
+
+$$ Y = 70 $$
+
+Predicted value:
+
+$$ \hat{Y} = 71.5 $$
+
+Therefore:
+
+$$ e = 70-71.5 $$ $$ \boxed{e=-1.5} $$
+11. Least Squares Method
+
+The regression line is selected by minimizing the sum of squared errors.
+
+$$ SSE = \sum (Y-\hat{Y})^2 $$
+
+The objective is:
+
+$$ \boxed{\text{Minimize } \sum (Y-\hat{Y})^2} $$
+12. SSE
+Sum of Squared Errors
+$$ \boxed{ SSE = \sum (Y-\hat{Y})^2 } $$
+
+SSE represents the unexplained/error variation.
+
+13. SST
+Total Sum of Squares
+$$ \boxed{ SST = \sum (Y-\bar{Y})^2 } $$
+
+SST represents the total variation in the dependent variable.
+
+14. SSR
+Regression Sum of Squares
+$$ \boxed{ SSR = \sum (\hat{Y}-\bar{Y})^2 } $$
+
+SSR represents the variation explained by the regression model.
+
+Relationship Between SST, SSR and SSE
+$$ \boxed{ SST = SSR + SSE } $$
+15. R²
+Definition
+
+R², or coefficient of determination, represents the proportion of variation in the dependent variable that is explained by the regression model.
+
+Formula:
+
+$$ \boxed{ R^2 = \frac{SSR}{SST} } $$
+
+Another formula:
+
+$$ \boxed{ R^2 = 1-\frac{SSE}{SST} } $$
+
+Example:
+
+If:
+
+$$ R^2 = 0.80 $$
+
+then 80% of the variation in Y is explained by the model for that dataset.
+
+R² is not the same as prediction accuracy.
+
+16. Simple Linear Regression Workflow
+Collect Data
+      ↓
+Identify X and Y
+      ↓
+Calculate Mean of X and Y
+      ↓
+Calculate Slope (b₁)
+      ↓
+Calculate Intercept (b₀)
+      ↓
+Create Regression Equation
+      ↓
+Make Prediction
+      ↓
+Calculate Residual/Error
+      ↓
+Evaluate the Model
+17. Formula Sheet
+Mean of X
+$$ \boxed{ \bar{X} = \frac{\sum X}{n} } $$
+Mean of Y
+$$ \boxed{ \bar{Y} = \frac{\sum Y}{n} } $$
+Slope
+$$ \boxed{ b_1 = \frac{\sum (X-\bar{X})(Y-\bar{Y})} {\sum (X-\bar{X})^2} } $$
+Alternative Slope Formula
+$$ \boxed{ b_1 = \frac{n\sum XY-(\sum X)(\sum Y)} {n\sum X^2-(\sum X)^2} } $$
+Intercept
+$$ \boxed{ b_0 = \bar{Y}-b_1\bar{X} } $$
+Regression Equation
+$$ \boxed{ \hat{Y}=b_0+b_1X } $$
+Residual
+$$ \boxed{ e=Y-\hat{Y} } $$
+SSE
+$$ \boxed{ SSE=\sum(Y-\hat{Y})^2 } $$
+SST
+$$ \boxed{ SST=\sum(Y-\bar{Y})^2 } $$
+SSR
+$$ \boxed{ SSR=\sum(\hat{Y}-\bar{Y})^2 } $$
+Relationship
+$$ \boxed{ SST=SSR+SSE } $$
+R²
+$$ \boxed{ R^2=1-\frac{SSE}{SST} } $$
