@@ -1,0 +1,288 @@
+Introduction
+
+After training a regression model, we need to check how accurately the model is predicting values.
+
+For this, we compare:
+
+Actual Value → \(Y\)
+Predicted Value → \(\hat{Y}\)
+
+The difference between them is called error/residual.
+
+$$ \boxed{Error = Y-\hat{Y}} $$
+
+Three common regression evaluation metrics are:
+
+MAE — Mean Absolute Error
+MSE — Mean Squared Error
+RMSE — Root Mean Squared Error
+
+For all three metrics, a lower value generally indicates smaller prediction error on the evaluated data.
+
+2. Prerequisites
+
+Before learning MAE, MSE and RMSE, understand these three terms:
+
+Actual Value \(Y\)
+
+The real value present in the dataset.
+
+Predicted Value \(\hat{Y}\)
+
+The value predicted by the regression model.
+
+Error / Residual
+$$ \boxed{e=Y-\hat{Y}} $$
+
+Example:
+
+Actual value = 50
+Predicted value = 45
+
+$$ e=50-45=5 $$
+3. MAE — Mean Absolute Error
+Definition
+
+Mean Absolute Error (MAE) is the average of the absolute differences between actual values and predicted values.
+
+In simple words:
+
+MAE tells us how far the model's predictions are from the actual values on average.
+
+Formula
+$$ \boxed{ MAE=\frac{1}{n}\sum_{i=1}^{n}|Y_i-\hat{Y}_i| } $$
+
+Where:
+
+\(Y_i\) = Actual value
+\(\hat{Y}_i\) = Predicted value
+\(n\) = Number of observations
+\(| |\) = Absolute value
+Why do we use Absolute Value?
+
+Suppose the errors are:
+
+$$ -5,\ +5 $$
+
+If we directly calculate the average:
+
+$$ \frac{-5+5}{2}=0 $$
+
+This would incorrectly suggest that there is no error.
+
+Therefore, MAE uses absolute values:
+
+$$ |-5|=5 $$ $$ |5|=5 $$
+
+So:
+
+$$ MAE=\frac{5+5}{2}=5 $$
+MAE Numerical
+
+Consider the following data:
+
+Observation	Actual \(Y\)	Predicted \(\hat{Y}\)
+1	50	45
+2	60	65
+3	75	70
+4	90	84
+5	100	96
+Step 1: Calculate errors
+$$ e=Y-\hat{Y} $$
+Actual	Predicted	Error
+50	45	5
+60	65	-5
+75	70	5
+90	84	6
+100	96	4
+Step 2: Take absolute values
+$$ 5,\ 5,\ 5,\ 6,\ 4 $$
+Step 3: Apply formula
+$$ MAE=\frac{5+5+5+6+4}{5} $$ $$ =\frac{25}{5} $$ $$ \boxed{MAE=5} $$
+Interpretation
+
+The model's predictions differ from the actual values by 5 units on average.
+
+4. MSE — Mean Squared Error
+Definition
+
+Mean Squared Error (MSE) is the average of the squared differences between actual values and predicted values.
+
+In simple words:
+
+MSE calculates the error, squares it, and then takes the average.
+
+Formula
+$$ \boxed{ MSE=\frac{1}{n}\sum_{i=1}^{n}(Y_i-\hat{Y}_i)^2 } $$
+Why do we Square the Errors?
+1. It removes negative signs
+$$ (-5)^2=25 $$ $$ (5)^2=25 $$
+
+Therefore, positive and negative errors cannot cancel each other.
+
+2. It gives more importance to large errors
+
+For example:
+
+$$ 2^2=4 $$
+
+but:
+
+$$ 10^2=100 $$
+
+Therefore, MSE penalizes large errors much more strongly.
+
+MSE Numerical
+
+Using the previous errors:
+
+$$ 5,\ -5,\ 5,\ 6,\ 4 $$
+Step 1: Square each error
+$$ 5^2=25 $$ $$ (-5)^2=25 $$ $$ 5^2=25 $$ $$ 6^2=36 $$ $$ 4^2=16 $$
+Step 2: Add squared errors
+$$ 25+25+25+36+16=127 $$
+Step 3: Divide by number of observations
+$$ MSE=\frac{127}{5} $$ $$ \boxed{MSE=25.4} $$
+Interpretation
+
+The average squared prediction error is 25.4.
+
+MSE is expressed in squared units of the target variable.
+
+5. RMSE — Root Mean Squared Error
+Definition
+
+Root Mean Squared Error (RMSE) is the square root of the Mean Squared Error.
+
+In simple words:
+
+Calculate MSE first, then take its square root.
+
+Formula
+$$ \boxed{ RMSE=\sqrt{MSE} } $$
+
+or:
+
+$$ \boxed{ RMSE= \sqrt{ \frac{1}{n} \sum_{i=1}^{n}(Y_i-\hat{Y}_i)^2 } } $$
+Why do we need RMSE?
+
+MSE is expressed in squared units.
+
+For example, if the target variable is measured in marks:
+
+$$ MSE=25.4\text{ marks}^2 $$
+
+This is not very intuitive.
+
+Taking the square root brings the metric back to the original unit:
+
+$$ RMSE=\sqrt{25.4} $$ $$ \boxed{RMSE\approx5.04} $$
+
+So RMSE is easier to interpret.
+
+RMSE Numerical
+
+Suppose the errors are:
+
+$$ 4,\ -6,\ 3,\ -5,\ 2 $$
+Step 1: Square the errors
+$$ 4^2=16 $$ $$ (-6)^2=36 $$ $$ 3^2=9 $$ $$ (-5)^2=25 $$ $$ 2^2=4 $$
+Step 2: Add
+$$ 16+36+9+25+4=90 $$
+Step 3: Calculate MSE
+
+There are 5 observations:
+
+$$ MSE=\frac{90}{5} $$ $$ MSE=18 $$
+Step 4: Take square root
+$$ RMSE=\sqrt{18} $$ $$ \boxed{RMSE\approx4.24} $$
+6. MAE vs MSE vs RMSE
+Feature	MAE	MSE	RMSE
+Full Form	Mean Absolute Error	Mean Squared Error	Root Mean Squared Error
+Operation	Absolute value	Square	Square + Root
+Formula	(\frac{\sum	e	}{n})
+Large errors	Less affected	Highly affected	Highly affected
+Negative errors	Removed	Removed by squaring	Removed by squaring
+Unit	Same as target	Squared target unit	Same as target
+Interpretation	Very easy	Less intuitive	Easy
+Main purpose	Average error magnitude	Penalize large errors	Interpretable squared-error metric
+7. Main Difference in One Line
+MAE
+
+Absolute → Average
+
+$$ e\rightarrow |e|\rightarrow Average $$
+MSE
+
+Square → Average
+
+$$ e\rightarrow e^2\rightarrow Average $$
+RMSE
+
+Square → Average → Root
+
+$$ e\rightarrow e^2\rightarrow Average\rightarrow\sqrt{} $$
+8. Combined Numerical
+
+Suppose the errors produced by a regression model are:
+
+$$ \boxed{2,\ -4,\ 3,\ -1,\ 5} $$
+MAE
+
+First take absolute values:
+
+$$ 2,\ 4,\ 3,\ 1,\ 5 $$ $$ MAE=\frac{2+4+3+1+5}{5} $$ $$ \boxed{MAE=3} $$
+MSE
+
+Square the errors:
+
+$$ 4,\ 16,\ 9,\ 1,\ 25 $$ $$ MSE=\frac{4+16+9+1+25}{5} $$ $$ =\frac{55}{5} $$ $$ \boxed{MSE=11} $$
+RMSE
+$$ RMSE=\sqrt{11} $$ $$ \boxed{RMSE\approx3.32} $$
+9. Important Properties
+MAE
+Measures the average magnitude of errors.
+Uses absolute values.
+Easy to understand.
+Less sensitive to large errors than MSE.
+Has the same unit as the target variable.
+MSE
+Uses squared errors.
+Large errors receive a much higher penalty.
+Always non-negative.
+Useful when large errors are particularly undesirable.
+Has squared units.
+RMSE
+Square root of MSE.
+Sensitive to large errors because it is based on squared errors.
+Always non-negative.
+Has the same unit as the target variable.
+Easier to interpret than MSE.
+10. Important Exam Points
+Formula Set
+$$ \boxed{Error=Y-\hat{Y}} $$ $$ \boxed{ MAE=\frac{\sum|Y-\hat{Y}|}{n} } $$ $$ \boxed{ MSE=\frac{\sum(Y-\hat{Y})^2}{n} } $$ $$ \boxed{ RMSE=\sqrt{MSE} } $$
+Remember
+
+MAE = Absolute Error
+
+MSE = Squared Error
+
+RMSE = Square Root of MSE
+
+And:
+
+$$ \boxed{\text{Lower error metric generally means smaller prediction error}} $$
+Quick Revision
+Actual Value (Y)
+       ↓
+Predicted Value (Ŷ)
+       ↓
+Error = Y - Ŷ
+       ↓
+ ┌─────┼─────┐
+ ↓     ↓     ↓
+MAE   MSE   RMSE
+ ↓     ↓     ↓
+|e|    e²   √MSE
+ ↓     ↓     ↓
+Average Average Root
